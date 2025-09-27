@@ -48,6 +48,7 @@ public class KeyboardListener implements NativeKeyListener {
                     if (audioByteArray.length > 0) {
                         String input = recognizer.recognize(audioByteArray);
                         if (StringUtils.isNotEmpty(input)) {
+                            log.debug("🤖 Начата обработка команды '{}' голосовым ассистентом", input);
                             processAssistant(input, new AssistantProcessingOptions("user"));
                         } else
                             log.debug("🟡 Команда пуста");

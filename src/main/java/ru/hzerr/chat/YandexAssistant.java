@@ -7,6 +7,7 @@ import org.apache.hc.core5.http.ContentType;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import ru.hzerr.configuration.ReadOnlyApplicationConfiguration;
 import ru.hzerr.chat.model.AssistantOptions;
 import ru.hzerr.chat.model.AssistantRequest;
@@ -21,7 +22,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-//@Component
+@Component
 public class YandexAssistant implements IAssistant {
 
     private static final ObjectMapper mapper = new ObjectMapper();
@@ -180,6 +181,7 @@ public class YandexAssistant implements IAssistant {
             - `getCurrentWeekDay` — мой текущий день недели
             - `getCurrentZonedDateTime` — мое текущее время и дата
             - `getCurrentZonedDateTime [timezone]` — текущее время и дата в заданной тайм-зоне (поддерживаются: America/New_York, America/Los_Angeles, Europe/Moscow, Europe/Berlin, Asia/Tokyo, Asia/Singapore, Asia/Seoul, Asia/Dubai, Asia/Hong_Kong)
+            - `getClipboard` — получить текст из буфера обмена
             - `deleteAssistantHistory` — удалить историю сообщений ассистента
 
             ---

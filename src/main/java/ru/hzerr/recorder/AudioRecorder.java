@@ -25,7 +25,7 @@ public class AudioRecorder implements IRecorder {
 
     @PostConstruct
     private void init() throws Exception {
-        microphone = getMicrophone(AUDIO_FORMAT, "Микрофон (4- ME6S)");
+        microphone = getMicrophone(AUDIO_FORMAT, "Микрофон (5- ME6S)");
         microphone.open(AUDIO_FORMAT);
     }
 
@@ -43,7 +43,6 @@ public class AudioRecorder implements IRecorder {
                 audioStream = new ByteArrayOutputStream();
                 microphone.start();
 
-                // Возможно стоит в методе stop дожидаться завершения задачи? p.s пока работает норм
                 recorderTask = recorderService.submit(() -> {
                     byte[] buffer = new byte[4096];
                     try {

@@ -19,7 +19,7 @@ import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+//@Component
 public class DeepseekAssistant implements IAssistant {
 
     private static final Logger log = LoggerFactory.getLogger(DeepseekAssistant.class);
@@ -191,6 +191,7 @@ public class DeepseekAssistant implements IAssistant {
             - `getCurrentWeekDay` — мой текущий день недели
             - `getCurrentZonedDateTime` — мое текущее время и дата
             - `getCurrentZonedDateTime [timezone]` — текущее время и дата в заданной тайм-зоне (поддерживаются: America/New_York, America/Los_Angeles, Europe/Moscow, Europe/Berlin, Asia/Tokyo, Asia/Singapore, Asia/Seoul, Asia/Dubai, Asia/Hong_Kong)
+            - `getClipboard` — получить текст из буфера обмена
             - `deleteAssistantHistory` — удалить историю сообщений ассистента
 
             ---
