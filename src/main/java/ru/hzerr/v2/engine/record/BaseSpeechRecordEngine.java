@@ -50,6 +50,11 @@ public abstract class BaseSpeechRecordEngine implements ISpeechRecordEngine {
         return active.get();
     }
 
+    @Override
+    public boolean nonActive() {
+        return !active.get();
+    }
+
     @PreDestroy
     private void destroy() throws Exception {
         log.debug("📦 Завершение работы модуля записи речи...");

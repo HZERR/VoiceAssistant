@@ -29,4 +29,8 @@ public class JsonUtils {
             return false;
         }
     }
+
+    public static String writeValueAsString(Object value) throws JsonProcessingException {
+        return MAPPER.writeValueAsString(value);
+    }
 }

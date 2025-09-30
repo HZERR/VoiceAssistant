@@ -1,7 +1,7 @@
 package ru.hzerr.v2.engine.chatbot;
 
-public enum AssistantType {
+public enum ChatBotType {
     YANDEX,
     DEEPSEEK,
-    CHAT_GPT
+    DEEPSEEK_STREAM
 }

@@ -6,4 +6,5 @@ public interface ISpeechRecordEngine {
     void stop();
     byte[] getAudio();
     boolean isActive();
+    boolean nonActive();
 }

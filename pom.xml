@@ -29,6 +29,18 @@
             <artifactId>httpclient5</artifactId>
             <version>5.5</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/io.projectreactor/reactor-core -->
+        <dependency>
+            <groupId>io.projectreactor</groupId>
+            <artifactId>reactor-core</artifactId>
+            <version>3.8.0-M7</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/commons-net/commons-net -->
+        <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>3.12.0</version>
+        </dependency>
 <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.bytedeco/ffmpeg &ndash;&gt;-->
 <!--        <dependency>-->
 <!--            <groupId>org.bytedeco</groupId>-->

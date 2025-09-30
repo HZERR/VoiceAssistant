@@ -14,7 +14,7 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
 
-@Component
+//@Component
 public class TimeWorldService {
 
     private static final Logger log = LoggerFactory.getLogger(TimeWorldService.class);
