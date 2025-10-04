@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Component
+//@Component
 public class CommandProcessorFactory {
 
     private static final Logger log = LoggerFactory.getLogger(CommandProcessorFactory.class);

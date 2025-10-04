@@ -66,7 +66,7 @@ public class KeyboardListener implements NativeKeyListener {
     public void nativeKeyPressed(NativeKeyEvent nativeKeyEvent) {
         try {
             if (nativeKeyEvent.getKeyCode() == NativeKeyEvent.VC_F7) {
-                if (speechRecordEngine.nonActive()) {
+                if (speechRecordEngine.isActive()) {
                     speechRecordEngine.stop();
 
                     byte[] audio = speechRecordEngine.getAudio();
@@ -108,7 +108,7 @@ public class KeyboardListener implements NativeKeyListener {
 
         if (chatBotInstruction.hasActions()) {
             ChatBotProcessingConfiguration chatBotProcessingConfiguration = new ChatBotProcessingConfiguration();
-            chatBotProcessingConfiguration.setRole(ChatBotRole.TOOLS);
+            chatBotProcessingConfiguration.setRole(ChatBotRole.SYSTEM);
             chatBotProcessingConfiguration.setMessage(commandProcessorFactory.process(chatBotInstruction.getCommands()));
             ChatBotInstruction newChatBotInstruction = JsonUtils.read(chatBotEngine.process(chatBotProcessingConfiguration), ChatBotInstruction.class);
             processChatBotInstruction(newChatBotInstruction, depth + 1);

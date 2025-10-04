@@ -10,7 +10,7 @@ import ru.hzerr.v2.engine.stt.BaseSpeechToTextEngine;
 
 import java.io.IOException;
 
-//@Component
+@Component
 public class VoskSpeechToTextEngine extends BaseSpeechToTextEngine {
 
     private final ReadOnlyApplicationConfiguration applicationConfiguration;

@@ -1,9 +1,11 @@
 package ru.hzerr.v2.engine.stt;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import ru.hzerr.v2.engine.stt.impl.VoskSpeechToTextEngine;
 import ru.hzerr.v2.engine.stt.impl.WhisperSpeechToTextEngine;
 
+@Component
 public class SpeechToTextEngineFactory {
 
     private final ISpeechToTextEngine whisperEngine;

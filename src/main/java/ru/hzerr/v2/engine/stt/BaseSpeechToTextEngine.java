@@ -12,6 +12,7 @@ public abstract class BaseSpeechToTextEngine implements ISpeechToTextEngine {
 
     @PostConstruct
     private void initialize() throws Exception {
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> { try{destroy();} catch(Exception ignored) {}}));
         log.debug("📦 Инициализация модуля распознавания речи...");
         long startTime = System.currentTimeMillis();
         onInitialize();

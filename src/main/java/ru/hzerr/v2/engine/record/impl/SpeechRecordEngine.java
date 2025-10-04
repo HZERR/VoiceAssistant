@@ -63,10 +63,19 @@ public class SpeechRecordEngine extends BaseSpeechRecordEngine {
     private TargetDataLine getMicrophone(AudioFormat format, String deviceName) throws LineUnavailableException {
         for (Mixer.Info info : AudioSystem.getMixerInfo()) {
             if (info.getName().contains(deviceName)) {
-                return AudioSystem.getTargetDataLine(format, info);
+                Mixer mixer = AudioSystem.getMixer(info);
+                Line.Info[] lines = mixer.getTargetLineInfo();
+                for (Line.Info lineInfo : lines) {
+                    if (TargetDataLine.class.isAssignableFrom(lineInfo.getLineClass())) {
+                        if (AudioSystem.isLineSupported(lineInfo)) {
+                            TargetDataLine line = (TargetDataLine) mixer.getLine(lineInfo);
+                            line.open(format);
+                            return line;
+                        }
+                    }
+                }
             }
         }
-
-        throw new LineUnavailableException("❌ Микрофон не найден: " + deviceName);
+        throw new LineUnavailableException("❌ Не найден подходящий микрофон с именем: " + deviceName);
     }
 }

@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Component;
 import ru.hzerr.deprecated.processor.Command;
 import ru.hzerr.v2.command.processor.IProcessor;
 import ru.hzerr.v2.exception.ProcessingException;
@@ -13,6 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Component
 public class CommandProcessorFactory {
 
     private static final Logger log = LoggerFactory.getLogger(CommandProcessorFactory.class);
