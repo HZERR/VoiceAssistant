@@ -3,6 +3,8 @@ package ru.hzerr.configuration;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import java.nio.file.Path;
+
 @Component
 @SuppressWarnings("SpellCheckingInspection")
 public class ReadOnlyApplicationConfiguration implements IReadOnlyConfiguration {
@@ -21,6 +23,11 @@ public class ReadOnlyApplicationConfiguration implements IReadOnlyConfiguration 
     private String openAIAssistantApiKey;
     @Value("${service.time.world.api.key}")
     private String timeWorldApiKey;
+    private static final Path PROGRAM_DIRECTORY = Path.of(System.getProperty("user.home"), "Voice Assistant");
+    private static final Path WHISPER_DIRECTORY = PROGRAM_DIRECTORY.resolve("Whisper");
+    private static final String WHISPER_PROGRAM_RELATIVE_PATH = "/ru/hzerr/stt/whisper/whisper-cublas-12.4.0-bin-x64.zip";
+    private static final String WHISPER_MEDIUM_Q8_MODEL_RELATIVE_PATH = "/ru/hzerr/stt/whisper/ggml-medium-q8_0.bin";
+    private static final String WHISPER_MEDIUM_Q8_MODEL_NAME = "ggml-medium-q8_0.bin";
 
     public ReadOnlyApplicationConfiguration() {
     }
@@ -51,5 +58,25 @@ public class ReadOnlyApplicationConfiguration implements IReadOnlyConfiguration 
 
     public String getTimeWorldApiKey() {
         return timeWorldApiKey;
+    }
+
+    public Path getProgramDirectory() {
+        return PROGRAM_DIRECTORY;
+    }
+
+    public Path getWhisperDirectory() {
+        return WHISPER_DIRECTORY;
+    }
+
+    public String getWhisperProgramRelativePath() {
+        return WHISPER_PROGRAM_RELATIVE_PATH;
+    }
+
+    public String getWhisperMediumQ8ModelRelativePath() {
+        return WHISPER_MEDIUM_Q8_MODEL_RELATIVE_PATH;
+    }
+
+    public String getWhisperMediumQ8ModelName() {
+        return WHISPER_MEDIUM_Q8_MODEL_NAME;
     }
 }

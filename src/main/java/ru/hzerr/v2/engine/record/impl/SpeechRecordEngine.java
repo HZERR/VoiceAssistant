@@ -7,7 +7,7 @@ import ru.hzerr.v2.engine.record.BaseSpeechRecordEngine;
 import javax.sound.sampled.*;
 import java.io.ByteArrayOutputStream;
 
-//@Component
+@Component
 public class SpeechRecordEngine extends BaseSpeechRecordEngine {
 
     private static final AudioFormat AUDIO_FORMAT = new AudioFormat(16000, 16, 1, true, false);

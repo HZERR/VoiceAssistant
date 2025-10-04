@@ -35,12 +35,6 @@
             <artifactId>reactor-core</artifactId>
             <version>3.8.0-M7</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/commons-net/commons-net -->
-        <dependency>
-            <groupId>commons-net</groupId>
-            <artifactId>commons-net</artifactId>
-            <version>3.12.0</version>
-        </dependency>
 <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.bytedeco/ffmpeg &ndash;&gt;-->
 <!--        <dependency>-->
 <!--            <groupId>org.bytedeco</groupId>-->
